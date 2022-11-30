@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="10dp"
+    android:background="@color/gray_dark"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".NoteFragment">
+
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/iv_back_chevron"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_gravity="center_vertical"
+            android:background="#3b3b3b"
+            app:riv_oval="false"
+            app:riv_mutate_background="true"
+            app:riv_corner_radius="10dp"
+            android:src="@drawable/ic_baseline_chevron_left_24"
+            android:contentDescription="@string/app_name" />
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:visibility="invisible"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/iv_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_baseline_delete_24"
+            android:layout_gravity="center_vertical"
+            android:padding="15dp"
+            android:layout_marginEnd="10dp"
+            android:contentDescription="@string/app_name" />
+
+        <Button
+            android:id="@+id/iv_edit_note"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:contentDescription="@string/app_name"
+            android:enabled="false"
+            android:padding="8dp"
+            android:text="@string/update"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp">
+
+        <EditText
+            android:id="@+id/title_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:textColor="@color/white"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:background="@null"
+            android:textCursorDrawable="@drawable/cursor_white"
+            tools:text="Push the notes app to github repository"
+            android:inputType="textMultiLine"
+            tools:ignore="LabelFor"
+            android:importantForAutofill="no" />
+
+        <TextView
+            android:id="@+id/date_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            tools:text="May 23,2022"
+            android:padding="10dp"/>
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/description_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/header_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:background="@null"
+        android:textSize="16sp"
+        android:textCursorDrawable="@drawable/cursor_white"
+        tools:text="@string/lorem_ipsum"
+        android:importantForAutofill="no"
+        tools:ignore="LabelFor"
+        android:inputType="textMultiLine" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
